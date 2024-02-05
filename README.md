@@ -36,3 +36,8 @@ Inside the shell, you have to start kong and configure services, routes and plug
 
 After this initial setup, kong will be running on `localhost:8000` and you can type curl commands
 to send requests to it (the kong API runs on port 8001 if needed for aditional setups).
+
+## Acknowledgements
+
+- https://github.com/Kong/kong-plugin/tree/master
+- https://github.com/marmotitude/kong-plugin-boilerplate
