@@ -1,0 +1,16 @@
+_format_version: "3.0"
+
+services:
+ - name: example-service
+   url: http://example.com
+   routes:
+   - name: example-route
+     paths:
+     - /foo
+   plugins:
+   - name: myplugin
+     config:
+       some_config: some_config_value
+       some_other_config: some_other_config_value
+
+
