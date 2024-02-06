@@ -27,8 +27,8 @@ pongo restart
 pongo shell
 ```
 
-Inside the shell, you have to start kong and configure services, routes and plugins, the
-[bootstrap.sh](./bootstrap.sh) script can be used to save you some keystrokes:
+Inside the shell, a bootstrap script that starts kong and configure services, routes and plugins
+will run, the contents of this script is at [.pongo/pongo-setup.sh](.pongo/pongo-setup.sh).
 
 ```
 [Kong-2.4.1:/kong]# source ../kong-plugin/bootstrap.sh
