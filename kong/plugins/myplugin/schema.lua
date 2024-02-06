@@ -17,8 +17,6 @@ local schema = {
               required = true,
               default = "Bye-World" } },
         },
-        entity_checks = {
-        },
       },
     },
   },

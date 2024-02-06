@@ -1,19 +1,14 @@
 #!/bin/bash
-# Run this script after a pongo restart to recreate a service with a route that uses the plugin
+if [ "$PONGO_COMMAND" = "shell" ]; then
 
-# utility function
-log() {
-    printf "\n\n%s\n" "$1"
-}
+  # Make Kong use the declarative config from file kong-conf.yaml of the host
+  export KONG_DATABASE=off
+  export KONG_DECLARATIVE_CONFIG=/kong-plugin/kong-conf.yaml
 
-log "Making Kong use the declarative config from file .pongo/kong-conf.yaml of the host"
-export KONG_DATABASE=off
-export KONG_DECLARATIVE_CONFIG=/kong-plugin/kong-conf.yaml
-export KONG_PLUGINS=myplugin
+  # Initialize db and start kong
+  kong migrations bootstrap --force
+  kong start
 
-log "Initializing db and startng kong"
-kong migrations bootstrap --force
-kong start
-
-log "sample request in the plugin route"
-curl -i --head --url "http://localhost:8000/foo"
+  # Sample request in the plugin route
+  curl -i --head --url "http://localhost:8000/foo"
+fi
