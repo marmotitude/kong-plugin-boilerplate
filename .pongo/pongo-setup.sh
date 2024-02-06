@@ -9,6 +9,7 @@ log() {
 log "Making Kong use the declarative config from file .pongo/kong-conf.yaml of the host"
 export KONG_DATABASE=off
 export KONG_DECLARATIVE_CONFIG=/kong-plugin/kong-conf.yaml
+export KONG_PLUGINS=myplugin
 
 log "Initializing db and startng kong"
 kong migrations bootstrap --force
