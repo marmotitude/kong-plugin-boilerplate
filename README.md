@@ -30,14 +30,11 @@ pongo shell
 Inside the shell, a bootstrap script that starts kong and configure services, routes and plugins
 will run, the contents of this script is at [.pongo/pongo-setup.sh](.pongo/pongo-setup.sh).
 
-```
-[Kong-2.4.1:/kong]# source ../kong-plugin/bootstrap.sh
-```
-
 After this initial setup, kong will be running on `localhost:8000` and you can type curl commands
 to send requests to it (the kong API runs on port 8001 if needed for aditional setups).
 
 ## Acknowledgements
 
 - https://github.com/Kong/kong-plugin/tree/master
+- https://github.com/Kong/kong-pongo
 - https://github.com/marmotitude/kong-plugin-boilerplate
